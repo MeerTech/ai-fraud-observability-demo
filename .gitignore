@@ -1,0 +1,22 @@
+
+# Temporary upload scripts
+upload*.ps1
+quick-upload.ps1
+*-upload.ps1
+cleanup.ps1
+
+# Duplicate folders
+ai-fraud-observability-demo/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Docker volumes
+**/node_modules/
