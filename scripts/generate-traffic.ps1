@@ -58,3 +58,4 @@ Write-Host "`nDashboard URLs:" -ForegroundColor White
 Write-Host "Grafana:    http://localhost:3000/d/fraud-dashboard" -ForegroundColor Yellow
 Write-Host "Prometheus: http://localhost:9090" -ForegroundColor Yellow
 Write-Host "Jaeger:     http://localhost:16686" -ForegroundColor Yellow
+

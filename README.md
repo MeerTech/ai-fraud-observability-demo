@@ -168,7 +168,7 @@
 >> ¦
 >> +-- docs/
 >> ¦   +-- architecture.md             # Architecture documentation
->> ¦   +-- interview-demo-guide.md     # Interview presentation guide
+>> ¦   +-- technical demonstration guide
 >> ¦
 >> +-- images/                         # Screenshots and diagrams
 >> ```
@@ -304,7 +304,7 @@
 >>
 >> ## ?? Acknowledgements
 >>
->> - MIT Professional Education - No Code AI/ML program
+>> - technical demonstration project
 >> - OpenTelemetry community
 >> - CNCF (Cloud Native Computing Foundation)
 >> - All open-source projects used in this demo
@@ -314,4 +314,6 @@
 >> Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
 >>
 >> Project Link: [https://github.com/<your-username>/ai-fraud-observability-demo](https://github.com/<your-username>/ai-fraud-observability-demo)
+
+
 
