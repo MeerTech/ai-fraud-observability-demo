@@ -1,0 +1,30 @@
+Demo Traffic Generation Output
+=============================
+
+Sample transaction output:
+
+1. Normal transaction (approved):
+   POST http://localhost:8080/order
+   {"user_id": "user1", "amount": 100, "country": "US"}
+   Response: {"order_id": "ord_1700000000_1234", "status": "completed"}
+
+2. High amount transaction (approved but monitored):
+   POST http://localhost:8080/order
+   {"user_id": "user2", "amount": 6000, "country": "US"}
+   Response: {"order_id": "ord_1700000000_5678", "status": "completed"}
+
+3. Fraudulent transaction (blocked):
+   POST http://localhost:8080/order
+   {"user_id": "user3", "amount": 8000, "country": "RU"}
+   Response: {"error": "Fraud detected", "details": {"risk_score": 0.85, "is_fraud": true}}
+
+Metrics Generated:
+- fraud_predictions_total{is_fraud="False"} = 2
+- fraud_predictions_total{is_fraud="True"} = 1
+- orders_total{status="completed"} = 2
+- orders_total{status="fraud"} = 1
+
+Traces Generated:
+- Each transaction creates an end-to-end trace
+- Spans: create-order ? fraud-check ? model-inference ? payment-process
+- Trace duration: 200-400ms per transaction
