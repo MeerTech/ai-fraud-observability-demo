@@ -1,0 +1,15 @@
+﻿{
+  "dashboard": {
+    "title": "AI Fraud Detection Demo",
+    "panels": [
+      {
+        "title": "Services Status",
+        "type": "stat",
+        "targets": [{
+          "expr": "up",
+          "legendFormat": "{{instance}}"
+        }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+AI Fraud Detection Observability Demo
+=====================================
+
+Architecture:
++-----------------+     +------------------+
+¦   Order Service ¦----?¦ Fraud Detector   ¦
+¦   :8080/:8000   ¦     ¦   :5000/:8000    ¦
++-----------------+     +------------------+
+         ¦                       ¦
+         ?                       ?
++-----------------------------------------+
+¦     OpenTelemetry Collector             ¦
+¦     :4317/:4318/:8889                   ¦
++-----------------------------------------+
+               ¦                 ¦
+               ?                 ?
+      +--------------+   +--------------+
+      ¦    Jaeger    ¦   ¦  Prometheus  ¦
+      ¦   :16686     ¦   ¦   :9090      ¦
+      +--------------+   +--------------+
+                                ¦
+                                ?
+                        +--------------+
+                        ¦   Grafana    ¦
+                        ¦   :3000      ¦
+                        +--------------+
+
+Metrics Available:
+- orders_total: Total orders by status
+- fraud_predictions_total: Fraud decisions
+- http_requests_total: Request rates
+- up: Service health
+
+Access URLs:
+- Grafana: http://localhost:3000
+- Jaeger: http://localhost:16686
+- Prometheus: http://localhost:9090
+- Order API: http://localhost:8080
+- Fraud API: http://localhost:5000
